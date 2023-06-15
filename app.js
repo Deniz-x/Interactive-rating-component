@@ -1,7 +1,5 @@
 let userRating = 0;
 
-
-
 const ratingForm = document.querySelector(".rating-form:not(.thank-you-card)");
 const thankYouCard = document.querySelector(".thank-you-card");
 const yourSelectionSpan = document.querySelector('#user-rating');
@@ -14,39 +12,32 @@ ratingForm.addEventListener("submit", function(e) {
 
 });
 
-const ratingBubbles = document.querySelectorAll('.rating-btn')
-console.log(ratingBubbles);
+const ratingBubbles = document.querySelector('#rating-bubbles');
+//using event delegation, add an event listener to the parent so all descendants have an event listener
+ratingBubbles.addEventListener("click", function(e) {
 
-// Convert the node list into an Array so we can
-// safely use Array methods with it
-let ratingBubblesArray = Array.prototype.slice.call(ratingBubbles);
-
-ratingBubbles.forEach(function(ratingBubble) {
-    ratingBubble.addEventListener("click", function handleClickBubble() {
-
-        console.log(this.getAttribute('id') + " clicked")
-        console.log(this.classList.contains('clicked'));
+    const target = e.target;
     
-        if(this.classList.contains('clicked')) {
-            this.classList.remove('clicked');
+    if(target.classList.contains('clicked')) {
+        target.classList.remove('clicked');
+    }
+    
+    else {
+        //if one bubble is clicked make the other bubbles unclicked
+        const prevClickedBubble = document.querySelector(".clicked");
+        if(prevClickedBubble!=null){
+            prevClickedBubble.classList.remove("clicked");
         }
         
-        else {
-            //if one bubble is clicked make the other bubbles unclicked
-            const prevClickedBubble = document.querySelector(".clicked");
-            if(prevClickedBubble!=null){
-                prevClickedBubble.classList.remove("clicked");
-            }
-            
-            //actually click the selected button
-            this.classList.add('clicked');
-            userRating = this.getAttribute('value')
-            console.log(userRating);
-            
-        }
-    
-    });
+        //actually click the selected button
+        target.classList.add('clicked');
+        userRating = target.getAttribute('value')
+        console.log(userRating);
+        
+    }
+
 });
+
 
 
 
