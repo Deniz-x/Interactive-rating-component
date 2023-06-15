@@ -1,5 +1,14 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    color: hsl(217, 12%, 63%);
+    margin-top: 1rem;
+    
+}
+.attribution a { 
+    color: hsl(25, 97%, 53%); 
+    text-decoration: none;
+}
 
 html {
     margin: 0;
@@ -75,6 +84,7 @@ main {
 }
 
 .rating-bubble {
+
     background-color: hsl(213, 19%, 18%);
     width:3rem;
     height:3rem;
@@ -84,6 +94,10 @@ main {
     text-align: center;
     line-height: 3rem;
 }
+
+input[type="radio"] {
+    display: none;
+  }
 
 .rating-bubble:hover {
     background-color: hsl(217, 12%, 63%);
@@ -101,7 +115,7 @@ main {
     display: none;
 }
 
-.clicked {
+input[type="radio"]:checked+label {
     background-color: hsl(25, 97%, 53%);
     color: white;
 }
