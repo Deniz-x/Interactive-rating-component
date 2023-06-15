@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Deniz-x/Interactive-rating-component)
-- Live Site URL: [Add live site URL here](https://deniz-x.github.io/Interactive-rating-component/)
+- Solution URL: [https://github.com/Deniz-x/Interactive-rating-component]
+- Live Site URL: [https://deniz-x.github.io/Interactive-rating-component/]
 
 ### Built with
 
